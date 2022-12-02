@@ -18,8 +18,8 @@ public class MainClass {
 	public MainClass() {
 		try {
 			prop = new Properties();
-			FileInputStream fis = new FileInputStream(new File("/Users/pkamerakodi/eclipse-workspace"
-					+ "/MarAprTDDPOM/src/main/java/configPkg/config.properties"));
+			FileInputStream fis = new FileInputStream(new File("/Users/pkamerakodi/eclipse-workspace/"
+					+ "WinterProjectQAWizard/src/main/java/configPkg/config.properties"));
 			prop.load(fis);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -43,5 +43,19 @@ public class MainClass {
 	public void tearDown() {
 		driver.close();
 	}
+	
+//	public void SwitchingFrames(){
+//		System.setProperty(prop.getProperty("chromeKey"), prop.getProperty("chromePath"));
+//	    driver = new ChromeDriver();
+//		driver.manage().window().maximize();
+//		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds
+//				(Long.valueOf(prop.getProperty("pageLoadTimeOut"))));
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds
+//				(Long.valueOf(prop.getProperty("implicitWait"))));
+//		driver.get(prop.getProperty("testAppUrl"));
+//		driver.switchTo().frame("xuTWKRgptnL4d4kHBm5l");
+//		
+//		
+//	}
 
 }

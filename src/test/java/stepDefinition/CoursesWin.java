@@ -1,9 +1,10 @@
 package stepDefinition;
 
+import basePkg.MainClass;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 
-public class CoursesWin {
+public class CoursesWin extends MainClass{
 	
 	@Given("user is in transfotech homepage")
 	public void user_is_in_transfotech_homepage() {

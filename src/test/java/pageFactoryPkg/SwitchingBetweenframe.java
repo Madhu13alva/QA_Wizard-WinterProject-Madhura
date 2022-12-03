@@ -1,13 +1,5 @@
-package stepDefinition;
-
-
-
-
-
-
+package pageFactoryPkg;
 import basePkg.MainClass;
-import pageFactoryPkg.HomePage;
-
 public class SwitchingBetweenframe extends MainClass {
 	
 	HomePage hp = new HomePage();

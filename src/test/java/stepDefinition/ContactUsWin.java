@@ -7,13 +7,15 @@ import org.testng.Assert;
 import basePkg.MainClass;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-//import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageFactoryPkg.ContactPage;
+import pageFactoryPkg.ErrorMessage;
 import pageFactoryPkg.HomePage;
+import pageFactoryPkg.SwitchingBetweenframe;
 
 public class ContactUsWin extends MainClass {
-	String firstName = "TesterA";
+	
 	String lastName = "TesterB";
 	String emailId = "tester@gmail.com";
 	String cellPhone = "3456666666L";
@@ -45,45 +47,45 @@ public class ContactUsWin extends MainClass {
 
 	}
 
-	@When("user gives valid First Name")
-	public void user_gives_valid_first_name() {
-		cp.EnterFirstName(firstName);
+	@When("user gives valid {string}")
+	public void user_gives_valid(String FirstName) {
+		cp.EnterFirstName(FirstName);
 
 	}
 
-	@And("user gives valid Last Name")
-	public void user_gives_valid_last_name() {
-		cp.EnterLastName(lastName);
+	@And("user gives a valid {string}")
+	public void user_gives_a_valid(String LastName) {
+		cp.EnterLastName(LastName);
 
 	}
 
-	@And("user gives valid Email ID")
-	public void user_gives_valid_email_id() {
-		cp.EnterEmailId(emailId);
+	@And("user types in valid {string}")
+	public void user_types_in_valid_email_id(String EmailID) {
+		cp.EnterEmailId(EmailID);
 
 	}
 
-	@Then("user gives valid Cell phone no with respect to countries in the drop down")
-	public void user_gives_valid_cell_phone_no_with_respect_to_countries_in_the_drop_down() {
-		cp.EnterCellPhone(cellPhone);
+	@Then("user puts valid {string} no with respect to countries in the drop down")
+	public void user_puts_valid_no_with_respect_to_countries_in_the_drop_down(String Cellphone) {
+		cp.EnterCellPhone(Cellphone);
 
 	}
 
-	@And("user gives valid state")
-	public void user_gives_valid_state() {
-		cp.EnterState(state);
+	@And("user enters valid {string}")
+	public void user_enters_valid(String State) {
+		cp.EnterState(State);
 
 	}
 
-	@And("user selects the required course from the check box")
+	@And("user selects the required Course from the check box")
 	public void user_selects_the_required_course_from_the_check_box() {
 		cp.EnterCourse(courses);
 
 	}
 
-	@And("user can type their message in the message text box")
-	public void user_can_type_their_message_in_the_message_text_box() {
-		cp.EnterTextMessage(message);
+	@And("user can type their {string} in the message text box")
+	public void user_can_type_their_in_the_message_text_box(String Message) {
+		cp.EnterTextMessage(Message);
 
 	}
 
@@ -100,9 +102,9 @@ public class ContactUsWin extends MainClass {
 
 	}
 
-	@When("user leaves First Name text box blank")
-	public void user_leaves_first_name_text_box_blank() {
-		cp.EnterFirstName(firstName_Blank);
+	@When("user leaves {string} text box blank")
+	public void user_leaves_text_box_blank(String FirstName) {
+		cp.EnterFirstName(FirstName);
 	}
 
 	@Then("a error message should be displayed below First Name field")
@@ -110,9 +112,9 @@ public class ContactUsWin extends MainClass {
 		Assert.assertTrue(em.validateFirstNameErrorMsg());
 	}
 
-	@Then("user gives invalid Cell phone no with respect to countries in the drop down")
-	public void user_gives_invalid_cell_phone_no_with_respect_to_countries_in_the_drop_down() {
-		cp.EnterCellPhone(invalidCellPhoneNumber);
+	@Then("user gives {string} no with respect to countries in the drop down")
+	public void user_gives_no_with_respect_to_countries_in_the_drop_down(String invalidCellPhone) {
+		cp.EnterCellPhone(invalidCellPhone);
 
 	}
 
@@ -123,16 +125,15 @@ public class ContactUsWin extends MainClass {
 
 	}
 
-	@When("user gives invalid Email ID")
-	public void user_gives_invalid_email_id() {
-		cp.EnterEmailId(invalidCellPhoneNumber);
+	@When("user types in {string}")
+	public void user_types_in(String InvalidEmailID) {
+		cp.EnterEmailId(InvalidEmailID);
 
 	}
 
 	@Then("a error message should be displayed below Email ID field")
 	public void a_error_message_should_be_displayed_below_email_id_field() {
-
-		Assert.assertTrue(em.validateEmailErrMsg());
+     Assert.assertTrue(em.validateEmailErrMsg());
 
 	}
 

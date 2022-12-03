@@ -21,19 +21,19 @@ Feature: Contact Us feature
   Feature will help user to contact the admin by providing required credentials.
 
  
-  #Scenario: Providing all the valid information on the information form
-    #Given user is in the Transfotech Homepage
-    #And user clicks on Contact Us Link
-    #When user gives valid First Name
-    #And user gives valid Last Name
-    #And user gives valid Email ID
-    #Then user gives valid Cell phone no with respect to countries in the drop down
-    #And user gives valid state
-    #And user selects the required course from the check box
-    #And user can type their message in the message text box
-    #Then user clicks submit button
+  Scenario: Providing all the valid information on the information form
+    Given user is in the Transfotech Homepage
+    And user clicks on Contact Us Link
+    When user gives valid First Name
+    And user gives valid Last Name
+    And user gives valid Email ID
+    Then user gives valid Cell phone no with respect to countries in the drop down
+    And user gives valid state
+    And user selects the required course from the check box
+    And user can type their message in the message text box
+    Then user clicks submit button
     
-    Scenario: Providing Contact information leaving Blank on the name Text Box
+   Scenario: Providing Contact information leaving Blank on the name Text Box
     Given user is in the Transfotech Homepage
     And user clicks on Contact Us Link
     When user leaves First Name text box blank
@@ -44,7 +44,60 @@ Feature: Contact Us feature
     And user selects the required course from the check box
     And user can type their message in the message text box
     Then user clicks submit button
-    And a error message should be displayed below First Name text box
+    And a error message should be displayed below First Name field
+    
+   Scenario: Providing Contact information with invalid Cell phone number
+    Given user is in the Transfotech Homepage
+    And user clicks on Contact Us Link
+    When user gives valid First Name
+    And user gives valid Last Name
+    And user gives valid Email ID
+    Then user gives invalid Cell phone no with respect to countries in the drop down
+    And user gives valid state
+    And user selects the required course from the check box
+    And user can type their message in the message text box
+    Then user clicks submit button
+    And a error message should be displayed below Cell Phone field
+    
+   Scenario: Providing Contact information with invalid Email
+    Given user is in the Transfotech Homepage
+    And user clicks on Contact Us Link
+    When user gives valid First Name
+    And user gives valid Last Name
+    And user gives invalid Email ID
+    Then user gives valid Cell phone no with respect to countries in the drop down
+    And user gives valid state
+    And user selects the required course from the check box
+    And user can type their message in the message text box
+    Then user clicks submit button
+    And a error message should be displayed below Email ID field
+    
+   Scenario: Providing blank space in the Email text box
+    Given user is in the Transfotech Homepage
+    And user clicks on Contact Us Link
+    When user gives valid First Name
+    And user gives valid Last Name
+    And user leave Email ID blank
+    Then user gives valid Cell phone no with respect to countries in the drop down
+    And user gives valid state
+    And user selects the required course from the check box
+    And user can type their message in the message text box
+    Then user clicks submit button
+    And a error message should be displayed below Email ID field 
+    
+   Scenario: Providing spaces  in Cell Phone
+    Given user is in the Transfotech Homepage
+    And user clicks on Contact Us Link
+    When user gives valid First Name
+    And user gives valid Last Name
+    And user gives valid Email ID
+    Then user gives space in Cell phone field
+    And user gives valid state
+    And user selects the required course from the check box
+    And user can type their message in the message text box
+    Then user clicks submit button
+    And a error message should be displayed below Cell Phone field
+    
     
 
 

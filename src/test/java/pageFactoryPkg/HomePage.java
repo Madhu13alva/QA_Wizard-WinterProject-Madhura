@@ -10,8 +10,7 @@ import basePkg.MainClass;
 
 public class HomePage extends MainClass{
 	
-	@FindBy(linkText="Contact Us")
-	WebElement ContactUsLink;
+	
 	
 	@FindBy(xpath="//button[@class=\"btn btn-dark\"]")
 	WebElement SubmitBtn;
@@ -32,9 +31,7 @@ public class HomePage extends MainClass{
 		
 	}
 	
-	public void ContactUsLink() {
-	ContactUsLink.click();
-	}
+	
 	
 	public void SubmitBtn() {
 		SubmitBtn.click();

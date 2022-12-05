@@ -10,29 +10,16 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageFactoryPkg.ContactPage;
-import pageFactoryPkg.ErrorMessage;
 import pageFactoryPkg.HomePage;
-import pageFactoryPkg.SwitchingBetweenframe;
 
 public class ContactUsWin extends MainClass {
 	
-	String lastName = "TesterB";
-	String emailId = "tester@gmail.com";
-	String cellPhone = "3456666666L";
-	String state = "NJ";
-	String courses = "Full-Stack QA Engineering";
 	String partialHomePageTitle = "Transfotech ";
-	String message = "Hi there";
-	String firstName_Blank = "";
-	String invalidCellPhoneNumber = "gfg53436776";
-	String invalidEmailId = "hjkfhrfj8@#56hh";
-	String EmailId_Blank = "";
-	String CellPhone_Space = "       ";
+
 
 	HomePage hp = new HomePage();
 	ContactPage cp = new ContactPage();
-	SwitchingBetweenframe sbf = new SwitchingBetweenframe();
-	ErrorMessage em = new ErrorMessage();
+	
 
 	@Given("user is in the Transfotech Homepage")
 	public void user_is_in_the_transfotech_homepage() {
@@ -42,14 +29,14 @@ public class ContactUsWin extends MainClass {
 
 	@And("user clicks on Contact Us Link")
 	public void user_clicks_on_contact_us_link() {
-
-		sbf.SwitchingToIframes();
+      cp.SwitchingToIframes();
 
 	}
 
 	@When("user gives valid {string}")
 	public void user_gives_valid(String FirstName) {
 		cp.EnterFirstName(FirstName);
+		
 
 	}
 
@@ -79,7 +66,7 @@ public class ContactUsWin extends MainClass {
 
 	@And("user selects the required Course from the check box")
 	public void user_selects_the_required_course_from_the_check_box() {
-		cp.EnterCourse(courses);
+		cp.SelectCourse();
 
 	}
 
@@ -91,7 +78,7 @@ public class ContactUsWin extends MainClass {
 
 	@Then("user clicks submit button")
 	public void user_clicks_submit_button() {
-		hp.SubmitBtn();
+		cp.SubmitBtn();
 
 	}
 
@@ -109,7 +96,7 @@ public class ContactUsWin extends MainClass {
 
 	@Then("a error message should be displayed below First Name field")
 	public void a_error_message_should_be_displayed_below_first_name_text_box() {
-		Assert.assertTrue(em.validateFirstNameErrorMsg());
+		Assert.assertTrue(cp.validateFirstNameErrorMsg());
 	}
 
 	@Then("user gives {string} no with respect to countries in the drop down")
@@ -121,7 +108,7 @@ public class ContactUsWin extends MainClass {
 	@Then("a error message should be displayed below Cell Phone field")
 	public void a_error_message_should_be_displayed_below_cell_phone_field() {
 
-		Assert.assertTrue(em.validateCellPhoneErrMsg());
+		Assert.assertTrue(cp.validateCellPhoneErrMsg());
 
 	}
 
@@ -133,21 +120,28 @@ public class ContactUsWin extends MainClass {
 
 	@Then("a error message should be displayed below Email ID field")
 	public void a_error_message_should_be_displayed_below_email_id_field() {
-     Assert.assertTrue(em.validateEmailErrMsg());
+     Assert.assertTrue(cp.validateEmailErrMsg());
 
 	}
 
-	@When("user leave Email ID blank")
-	public void user_leave_email_id_blank() {
-		cp.EnterEmailId(EmailId_Blank);
+	
+	@Then("user clicks on the drop down text box in Cell phone")
+	public void user_clicks_on_the_drop_down_text_box_in_cell_phone() {
+		cp.SelectDropDownArrowforCountries();
+		
+	    
+	}
+	@And("user selects country of choice")
+	public void user_selects_country_of_choice (){
+	  Assert.assertTrue(cp.validateCountrySelected());
 
+	
 	}
 	
-	@Then("user gives space in Cell phone field")
-		public void user_gives_space_in_cell_phone_field() {
-		cp.EnterCellPhone(CellPhone_Space);
-
-		    
-		}
+	@Then("user selects all the course from the check box")
+	public void user_selects_all_the_course_from_the_check_box() {
+		cp.SelecteingaAllTheCourse();
+	   
+	}
 
 }

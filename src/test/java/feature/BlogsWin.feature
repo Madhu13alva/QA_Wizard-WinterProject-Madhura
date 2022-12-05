@@ -21,10 +21,55 @@ Feature: Blogs feature
   Feature will allow us to access all blogs posted here
 
   
-  Scenario: User should be able to see the contents of the blogs when he clicks on any blogs posted
-    Given User is in the Homepage of Transfotech Academy
-    When user clicks on Blogs link
+  #Scenario: Blogs feature Testing
+    #Given user is on transfotech "<homepage>"
+    #When user clicks on the "<blogs>" link
+    #Then User clicks on the read more button of any of article posted
+    #
+     #Examples: 
+     #|homepage   |blogs|
+     #|Transfotech|Blogs|
+     
+  Scenario: Testing Comments and Ratings option on  Blogs when user has Already Logged in
+    Given user is on transfotech "<homepage>"
+    And User  logged in to the site.
+    When user clicks on the "<blogs>" link
     Then User clicks on the read more button of any of article posted
+    And User scrolls down the page to see Rate and Comment option
+    And user is allowed to give star Rating and comment
+    And user is allowed to post comment 
+    Then user clicks on post comments button
+    
+     Examples: 
+     |homepage   |blogs|
+     |Transfotech|Blogs|
+ 
+ 
+  #Scenario: Testing Comments and Ratings option on Blogs when user providing valid details
+    #Given user is on transfotech "<homepage>"
+    #When user clicks on the "<blogs>" link
+    #Then User clicks on the read more button of any of article posted
+    #And User scrolls down the page to see Rate and Comment option
+    #And user is allowed to give star Rating and "<comment>"
+    #Then user enter required information like "<name>" and "<email>"
+    #Then user clicks on post comments button and page refreshed and comments are posted
+    #
+    #Examples: 
+     #|homepage   |blogs|comment|name    |email          |
+     #|Transfotech|Blogs|Very informative article|TesterB |test1@gmail.com |
+     
+   #Scenario: Testing Comments and Ratings option on Blogs when user leaves required field blank
+    #Given user is on transfotech "<homepage>"
+    #When user clicks on the "<blogs>" link
+    #Then User clicks on the read more button of any of article posted
+    #And User scrolls down the page to see Rate and Comment option
+    #And user is allowed to give star Rating and "<comment>"
+    #Then user leaves details required field like "<name>" and "<email>" blank
+    #Then user clicks on post comments button and error message is displayed
+    #
+    #Examples: 
+     #|homepage   |blogs|comment|name|email|
+     #|Transfotech|Blogs|informative article|||
     
 
  

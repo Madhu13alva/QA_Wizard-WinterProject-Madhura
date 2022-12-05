@@ -100,7 +100,7 @@ Feature: Courses feature
     
     Examples: 
      |homepage   |BusinessAnalyst   |                            
-     |Transfotech|usiness Analyst Certification Course & Training in NYC - BA Job Placement|
+     |Transfotech|Business Analyst Certification Course & Training in NYC - BA Job Placement|
     
     
     

@@ -113,13 +113,6 @@ public class CoursesPage extends MainClass {
 	@FindBy(xpath="//div[@id=\"elementor-tab-content-1253\"]")
 	WebElement ContentsOfBusinessAnalystClassScdeule;
 	
-	
-	
-	
-	
-	
-	
-
 	public CoursesPage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -211,8 +204,6 @@ public boolean validateEmailErrMsg() {
 public void ScrollDownThePageForMasterEthicalHacking() {
 	Actions action = new Actions(driver);
 	action.sendKeys(Keys.PAGE_DOWN).build().perform();
-	
-	
 	
 }
 

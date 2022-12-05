@@ -80,7 +80,7 @@ public class CoursesWin extends MainClass {
 
 	@And("error message should be seen")
 	public void error_message_should_be_seen() {
-		cp.validateEmailErrMsg();
+		Assert.assertTrue(cp.validateEmailErrMsg());
 
 	}
 

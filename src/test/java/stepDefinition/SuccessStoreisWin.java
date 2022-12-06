@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 import pageFactoryPkg.HomePage;
 import pageFactoryPkg.SuccessStoriesPage;
 
-public class SuccessStoryWin extends MainClass {
+public class SuccessStoreisWin extends MainClass {
 
 	SuccessStoriesPage sp = new SuccessStoriesPage();
 	HomePage hp = new HomePage();

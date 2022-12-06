@@ -40,6 +40,21 @@ public class BlogsPage extends MainClass{
 	@FindBy(xpath="//div[@class=\"comment-box media-comment-body\"]")
 	WebElement CommentsPosted;
 	
+	@FindBy(xpath="(//div[@class=\"login-register\"])[2]")
+	WebElement LogInLink;
+	
+	@FindBy(id="username")
+	WebElement UserName;
+	
+	@FindBy(id="password")
+	WebElement Password;
+	
+	@FindBy(name="rememberme")
+	WebElement ChechBox;
+	
+	@FindBy(xpath="(//*[@type=\"submit\"])[2]")
+	WebElement LogInBtn;
+	
     
 	public  BlogsPage() {
 		PageFactory.initElements(driver, this);
@@ -97,7 +112,25 @@ public boolean validateErrMsg() {
 		
 		return ErrMsg.isDisplayed();
 	}
+public void CickLogInlink() {
+	LogInLink.click();	
+}
 
+public void EnterUserName(String username) {
+	UserName.sendKeys(username);
+}
+
+public void EnterPassword(String password) {
+	Password.sendKeys(password);
+}
+
+public void CickremembermeChechBox() {
+	ChechBox.click();	
+}
+
+public void CickLogInBtn() {
+	LogInBtn.click();	
+}
 		
 	
 }

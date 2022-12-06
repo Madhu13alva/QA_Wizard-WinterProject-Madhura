@@ -10,7 +10,7 @@ import io.cucumber.java.en.When;
 import pageFactoryPkg.HomePage;
 import pageFactoryPkg.RegistrationPage;
 
-public class RegistrationOfNewUserWin extends MainClass{
+public class RegistrationOfNewAccountWin extends MainClass{
 	
 	HomePage hp = new HomePage();
 	RegistrationPage rp = new RegistrationPage();

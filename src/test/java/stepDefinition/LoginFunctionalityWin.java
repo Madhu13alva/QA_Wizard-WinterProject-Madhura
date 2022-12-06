@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 import pageFactoryPkg.HomePage;
 import pageFactoryPkg.LogInPage;
 
-public class LogInFunctionalityfeatureWin extends MainClass {
+public class LoginFunctionalityWin extends MainClass {
 	
 	HomePage hp = new HomePage();
 	LogInPage lp = new LogInPage();

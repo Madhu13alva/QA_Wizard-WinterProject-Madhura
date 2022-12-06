@@ -75,5 +75,27 @@ public class BlogsWin extends MainClass {
 		bp.EnteringEmail(email);
 	}
 	
+	@And("user clicks on login on top right of homepage")
+	public void user_clicks_on_login_register_on_top_right_of_homepage() {
+		bp.CickLogInlink();
+	    
+	}
+
+	@When("user types in a {string} and {string}")
+	public void user_types_in_a_and(String username, String password) {
+		bp.EnterUserName(username);
+		bp.EnterPassword(password);
+		bp.CickremembermeChechBox();
+		
+	    
+	}
+
+	@And("clicks the login")
+	public void clicks_the_login() {
+		bp.CickLogInBtn();
+	   
+	}
+	
+	
 	
 }

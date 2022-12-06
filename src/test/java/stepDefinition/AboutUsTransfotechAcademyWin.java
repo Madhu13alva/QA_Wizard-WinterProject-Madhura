@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 import pageFactoryPkg.AboutUsPage;
 import pageFactoryPkg.HomePage;
 
-public class AboutUsWin extends MainClass{
+public class AboutUsTransfotechAcademyWin extends MainClass{
 	
 	AboutUsPage ap = new AboutUsPage();
 	HomePage hp = new HomePage();

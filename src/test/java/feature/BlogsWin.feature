@@ -38,12 +38,12 @@ Feature: Blogs feature
     When user clicks on the "<blogs>" link
     Then User clicks on the read more button of any of article posted
     And User scrolls down the page to see Rate and Comment option
-    And And user is allowed to give star Rating and "<comment>" 
+    And user is allowed to give star Rating and "<comment>" 
     Then user clicks on post comments button and page refreshed and comments are posted
     
      Examples: 
      |homepage   |username | password  |blogs|comment|
-     |Transfotech|tester133| tester13AB|Blogs|nice|
+     |Transfotech|testerA| Tester@2022|Blogs|nice|
  
  
   #Scenario: Testing Comments and Ratings option on Blogs when user providing valid details

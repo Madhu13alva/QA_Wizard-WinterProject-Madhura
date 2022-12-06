@@ -91,8 +91,9 @@ public class BlogsWin extends MainClass {
 	}
 
 	@And("clicks the login")
-	public void clicks_the_login() {
+	public void clicks_the_login() throws InterruptedException {
 		bp.CickLogInBtn();
+		
 	   
 	}
 	

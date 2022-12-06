@@ -30,9 +30,9 @@ public class AboutUsPage extends MainClass{
     action.moveToElement(AboutUs).perform();
     Assert.assertTrue(DropDownValues.getSize().height > 0);
 }
-	public String ClickingOnSucessstories() {
+	public void ClickingOnSucessstories() {
 		SuccessStories.click();
-		return driver.getTitle();
+		
 				
 		
 	}

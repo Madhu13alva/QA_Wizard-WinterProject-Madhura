@@ -24,9 +24,9 @@ Feature: Success Stories
   Scenario: Success stories testing working 
     Given user types in websit URL and come to "<Homepage>"
     And user clicks on about us and gets drop down menu and clicks on success stories
-    When user clicks on working success stories 
+    When user clicks on working success stories "<youtube"> link should open 
     
     
  Examples: 
-      | Homepage    |
-      | Transfotech |
+      | Homepage    |youtube|
+      | Transfotech |https://www.youtube.com/watch?v=JXrhkVwlmE8|

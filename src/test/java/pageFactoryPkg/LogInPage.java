@@ -46,5 +46,9 @@ public class LogInPage extends MainClass {
 	public void CickLogInBtn() {
 		LogInBtn.click();	
 	}
+	public void closeApp() {
+		tearDown();
+		
+	}
 	
 }

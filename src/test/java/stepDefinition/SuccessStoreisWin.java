@@ -27,12 +27,13 @@ public class SuccessStoreisWin extends MainClass {
 	    
 	}
      
-	@When("user clicks on working success stories")
-	public void user_clicks_on_working_success_stories() {
-	    sp.ClickingOnLinkOfUserSuccessStory(); 
-	}
-
 	
+	@When("user clicks on working success stories {string}> link should open")
+	public void user_clicks_on_working_success_stories_link_should_open(String youtube) {
+		sp.ClickingOnLinkOfUserSuccessStory(); 
+
+   
+	}
 
 	
 	

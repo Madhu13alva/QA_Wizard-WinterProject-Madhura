@@ -15,7 +15,7 @@ public class SuccessStoriesPage extends MainClass{
 	@FindBy(xpath="(//a[text()='Success Stories'])[2]")
 	WebElement SuccessStories;
 	
-	@FindBy(xpath="(//div[@class=\"elementor-image-box-wrapper\"])[1]")
+	@FindBy(xpath="(//figure[@class=\"elementor-image-box-img\"])[1]")
 	WebElement LinkOfUserSuccessStory;
 	
 	
@@ -37,12 +37,10 @@ public class SuccessStoriesPage extends MainClass{
 	public void ClickingOnLinkOfUserSuccessStory() {
 		LinkOfUserSuccessStory.click();
 		
-
-		
 	}
 	
 	public String ValidateYoutube() {
-		return driver.getTitle();
+		return driver.getCurrentUrl();
 	}
 
 }

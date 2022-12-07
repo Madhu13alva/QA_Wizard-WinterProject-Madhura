@@ -94,6 +94,8 @@ public class BlogsWin extends MainClass {
 	public void clicks_the_login() throws InterruptedException {
 		bp.CickLogInBtn();
 		
+		
+		
 	   
 	}
 	
